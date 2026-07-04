@@ -1,0 +1,40 @@
+============================================================
+  BOTSENTRY ML — MODEL EVALUATION REPORT
+============================================================
+
+Dataset: 10,000 accounts  |  6,000 Legitimate  |  4,000 Bots
+Features: 28  |  Train/Val/Test: 6999/1501/1500
+
+Model                        Acc    Prec     Rec      F1      AUC
+------------------------------------------------------------
+Logistic Regression       1.0000  1.0000  1.0000  1.0000   1.0000
+Random Forest             1.0000  1.0000  1.0000  1.0000   1.0000
+Gradient Boosting         1.0000  1.0000  1.0000  1.0000   1.0000
+Ensemble (Soft Vote)      1.0000  1.0000  1.0000  1.0000   1.0000
+
+Best Single Model: Logistic Regression
+
+Detailed Classification Report (Ensemble):
+              precision    recall  f1-score   support
+
+  Legitimate       1.00      1.00      1.00       900
+    Bot/Fake       1.00      1.00      1.00       600
+
+    accuracy                           1.00      1500
+   macro avg       1.00      1.00      1.00      1500
+weighted avg       1.00      1.00      1.00      1500
+
+
+Top 10 Most Important Features (Random Forest):
+   1. spam_keyword_score               0.2213
+   2. duplicate_post_ratio             0.1761
+   3. mutual_follow_rate               0.1271
+   4. burst_score                      0.1250
+   5. content_diversity                0.0662
+   6. avg_urls_per_post                0.0572
+   7. followers_growth_rate            0.0528
+   8. account_age_days                 0.0496
+   9. repost_ratio                     0.0439
+  10. sentiment_variance               0.0240
+
+============================================================
